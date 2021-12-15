@@ -2,8 +2,22 @@ import React from 'react';
 import CartItemList from './CartItemList';
 
 class Cart extends React.Component {
+  constructor () {
+    super();
+    this.state = { cartItems: [] };
+  }
+
   render() {
-    return <div className="cart"><h2>Cart</h2><CartItemList items={this.props.items}/></div>;
+    return <div className="cart"><h2>Cart</h2><CartItemList items={this.state.cartItems}/></div>;
+  }
+  componentWillReceiveProps ( nextProps ) {
+    let newCartItemList = [];
+    for ( let item of nextProps.items ) {
+      let foundItem = newCartItemList.find( x => x.code === item.code );
+      if ( foundItem ) {
+        
+      }
+    }
   }
 }
 
