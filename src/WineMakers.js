@@ -1,12 +1,14 @@
 import React from "react";
+import WineMaker from "./WineMaker";
 import { Link, Route, Switch } from "react-router-dom";
-import Catalog from "./Catalog";
-import About from "./About";
 
 class WineMakers extends React.Component {
   renderWineMakersList() {
     return (
       <ul>
+        <li>
+          <Link to="/winemakers/WM1">Wine & Wine</Link>
+        </li>
         <li>
           <Link to="/winemakers/WM2">Wine & Co</Link>
         </li>
@@ -17,9 +19,8 @@ class WineMakers extends React.Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" component={Catalog} />
-        <Route path="/winemakers" component={WineMakers} />
-        <Route path="/about" component={About} />
+        <Route exact path="/winemakers" render={this.renderWineMakersList} />
+        <Route path="/winemakers/:code" component={WineMaker} />
       </Switch>
     );
   }
