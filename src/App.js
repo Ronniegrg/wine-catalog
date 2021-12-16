@@ -29,8 +29,6 @@ class App extends Component {
           <Route exact path="/" component={Catalog} />
           <Route path="/winemakers" component={WineMakers} />
           <Route path="/about" component={About} />
-          {/*<Route path="/footer" children={() => <Footer />} />*/}
-          {/*/!*<Route path="/about" render={() => <About />} />*!/ this line can be use instead of the line 26 and the result is the same*/}
         </Switch>
       </div>
     );
